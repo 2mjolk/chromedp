@@ -21,6 +21,7 @@ import (
 	"github.com/chromedp/cdproto/dom"
 	"github.com/chromedp/cdproto/inspector"
 	"github.com/chromedp/cdproto/log"
+	"github.com/chromedp/cdproto/network"
 	"github.com/chromedp/cdproto/page"
 	"github.com/chromedp/cdproto/runtime"
 	"github.com/chromedp/cdproto/target"
@@ -321,6 +322,7 @@ func (c *Context) attachTarget(ctx context.Context, targetID target.ID) error {
 		page.Enable(),
 		dom.Enable(),
 		css.Enable(),
+		network.Enable(),
 
 		// enable target discovery
 		target.SetDiscoverTargets(true),
